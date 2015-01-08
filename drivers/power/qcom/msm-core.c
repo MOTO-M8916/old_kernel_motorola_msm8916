@@ -364,7 +364,7 @@ static int update_userspace_power(struct sched_params __user *argp)
 	 * argp->cpumask within the cluster (argp->cluster)
 	 */
 	spin_lock(&update_lock);
-	get_user(cpumask, &argp->cpumask);
+        cpumask = argp->cpumask;
 	for (i = 0; i < MAX_CORES_PER_CLUSTER; i++, cpumask >>= 1) {
 		if (!(cpumask & 0x01))
 			continue;
@@ -386,7 +386,8 @@ static int update_userspace_power(struct sched_params __user *argp)
 			repopulate_stats(cpu);
 		}
 	}
-	mutex_unlock(&policy_update_mutex);
+        mutex_unlock(&policy_update_mutex);
+	spin_unlock(&update_lock);
 
 	activate_power_table = true;
 	return 0;
