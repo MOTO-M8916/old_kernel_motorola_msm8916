@@ -1,4 +1,4 @@
-ifeq ($(CONFIG_OF),y)
+feq ($(CONFIG_OF),y)
 
 dtb-$(CONFIG_ARCH_MSM8974) += msm8974-v1-cdp.dtb \
 	msm8974-v1-fluid.dtb \
@@ -272,37 +272,37 @@ dtb-$(CONFIG_ARCH_MSM8916) += msm8916-harpia-p1ad.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-harpia-p1b.dtb
 else ifeq ($(CONFIG_MMI_DTB_LUX),y)
 # Motorola 8939 lux
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p0.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1b.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1c.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p0.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1b.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1c.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2a.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2c.dtb
 else
 # Motorola 8916 Devices
 ifeq ($(CONFIG_MMI_DTB_SURNIA),y)
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p0.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p1.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1a.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1b.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1ad.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1bd.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2a.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2ad.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2b.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2bd.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p0.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p1.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1a.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1b.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1ad.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p1bd.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2a.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2ad.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2b.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2bd.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p3.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p3d.dtb
 endif
 # Motorola 8916 osprey
 ifeq ($(CONFIG_MMI_DTB_OSPREY),y)
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p0.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1a.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1ad.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1b.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1bd.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2a.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2ad.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p0.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1a.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1ad.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1b.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1bd.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2a.dtb
+#dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2ad.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2b.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2bd.dtb
 endif
