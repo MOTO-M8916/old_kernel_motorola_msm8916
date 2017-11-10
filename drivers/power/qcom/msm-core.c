@@ -389,6 +389,7 @@ static int update_userspace_power(struct sched_params __user *argp)
 	}
         mutex_unlock(&policy_update_mutex);
 	spin_unlock(&update_lock);
+	mutex_unlock(&policy_update_mutex);
 
 	activate_power_table = true;
 	return 0;
