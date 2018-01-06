@@ -317,8 +317,9 @@ static int update_userspace_power(struct sched_params __user *argp)
 	get_user(cluster, &argp->cluster);
 	mpidr = cluster << 8;
 
-	pr_debug("%s: cpumask %d, cluster: %d\n", __func__, cpumask,
-					cluster);
+        pr_debug("%s: cpumask %d, cluster: %d\n", __func__, cpumask,
+                                        cluster);
+
 	for (i = 0; i < MAX_CORES_PER_CLUSTER; i++, cpumask >>= 1) {
 		if (!(cpumask & 0x01))
 			continue;
@@ -363,8 +364,8 @@ static int update_userspace_power(struct sched_params __user *argp)
 	/* Copy the same power values for all the cpus in the cpumask
 	 * argp->cpumask within the cluster (argp->cluster)
 	 */
+	get_user(cpumask, &argp->cpumask);
 	spin_lock(&update_lock);
-        cpumask = argp->cpumask;
 	for (i = 0; i < MAX_CORES_PER_CLUSTER; i++, cpumask >>= 1) {
 		if (!(cpumask & 0x01))
 			continue;
