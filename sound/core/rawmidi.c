@@ -626,7 +626,6 @@ int snd_rawmidi_output_params(struct snd_rawmidi_substream *substream,
 	char *oldbuf;
 	struct snd_rawmidi_runtime *runtime = substream->runtime;
 	unsigned long flags;
-
 	if (substream->append && substream->use_count > 1)
 		return -EBUSY;
 	snd_rawmidi_drain_output(substream);
@@ -958,6 +957,7 @@ static long snd_rawmidi_kernel_read1(struct snd_rawmidi_substream *substream,
 	long result = 0, count1;
 	struct snd_rawmidi_runtime *runtime = substream->runtime;
 
+	spin_lock_irqsave(&runtime->lock, flags);
 	if (userbuf)
 		mutex_lock(&runtime->realloc_mutex);
 	while (count > 0 && runtime->avail) {
@@ -985,6 +985,7 @@ static long snd_rawmidi_kernel_read1(struct snd_rawmidi_substream *substream,
 		result += count1;
 		count -= count1;
 	}
+	spin_unlock_irqrestore(&runtime->lock, flags);
 	if (userbuf)
 		mutex_unlock(&runtime->realloc_mutex);
 	return result;
@@ -1383,9 +1384,9 @@ static void snd_rawmidi_proc_info_read(struct snd_info_entry *entry,
 				    pid_vnr(substream->pid));
 				runtime = substream->runtime;
 				snd_iprintf(buffer,
-				    "  Mode         : %s\n"
+				    "  Mode	    : %s\n"
 				    "  Buffer size  : %lu\n"
-				    "  Avail        : %lu\n",
+				    "  Avail	    : %lu\n",
 				    runtime->oss ? "OSS compatible" : "native",
 				    (unsigned long) runtime->buffer_size,
 				    (unsigned long) runtime->avail);
@@ -1408,7 +1409,7 @@ static void snd_rawmidi_proc_info_read(struct snd_info_entry *entry,
 				runtime = substream->runtime;
 				snd_iprintf(buffer,
 					    "  Buffer size  : %lu\n"
-					    "  Avail        : %lu\n"
+					    "  Avail	    : %lu\n"
 					    "  Overruns     : %lu\n",
 					    (unsigned long) runtime->buffer_size,
 					    (unsigned long) runtime->avail,
