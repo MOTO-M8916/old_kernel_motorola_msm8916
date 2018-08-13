@@ -278,7 +278,7 @@ dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1b.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1c.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2a.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2c.dtb
-else ifeq ($(CONFIG_MMI_DTB_SURNIA),y)
+else
 # Motorola 8916 styx,surnia
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p0.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-styx-p1.dtb
@@ -292,7 +292,7 @@ dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2b.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p2bd.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p3.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-surnia-p3d.dtb
-else ifeq ($(CONFIG_MMI_DTB_OSPREY),y)
+
 # Motorola 8916 osprey
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p0.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p1a.dtb
@@ -303,7 +303,7 @@ dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2a.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2ad.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2b.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2bd.dtb
-else ifeq ($(CONFIG_MMI_DTB_MERLIN),y)
+
 # Motorola 8939 merlin
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-merlin-p0.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-merlin-p1.dtb

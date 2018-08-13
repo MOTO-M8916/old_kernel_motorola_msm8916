@@ -1075,15 +1075,6 @@ config MMI_DTB_LUX
 	  Only include Motorola device LUX DTB to limit the number that
 	  get built during kernel compilation.
 
-
-config MMI_DTB_OSPREY
-	depends on ARCH_MSM
-	default n
-	bool "Motorola Mobility Device OSPREY DTB"
-	help
-	  Only include Motorola device OSPREY DTB to limit the number that
-	  get built during kernel compilation.
-
 config HAS_MACH_MEMUTILS
 	default n
 	bool "Motorola MSM memcpy enhancements"
