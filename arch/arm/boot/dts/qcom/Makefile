@@ -307,16 +307,6 @@ dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2b.dtb
 dtb-$(CONFIG_ARCH_MSM8916) += msm8916-osprey-p2bd.dtb
 endif
 
-# Motorola 8939 Devices
-ifeq ($(CONFIG_MMI_DTB_LUX),y)
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p0.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1b.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p1c.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2a.dtb
-dtb-$(CONFIG_ARCH_MSM8916) += msm8939-lux-p2c.dtb
-endif
-
 # Merlin
 ifeq ($(CONFIG_MMI_DTB_MERLIN),y)
 dtb-$(CONFIG_ARCH_MSM8916) += msm8939-merlin-p0.dtb
