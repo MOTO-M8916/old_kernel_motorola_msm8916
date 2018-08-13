@@ -905,11 +905,6 @@ static inline bool is_device_suspended(struct smb1360_chip *chip)
 	return !chip->resume_completed;
 }
 
-static inline bool is_device_suspended(struct smb1360_chip *chip)
-{
-	return !chip->resume_completed;
-}
-
 static int smb1360_disable_fg_access(struct smb1360_chip *chip)
 {
 	int rc;
