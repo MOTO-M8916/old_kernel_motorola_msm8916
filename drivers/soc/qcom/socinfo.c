@@ -788,6 +788,7 @@ msm_set_image_version(struct device *dev,
 			size_t count)
 {
 	char *store_address;
+	int i;
 
 	down_read(&current_image_rwsem);
 	if (current_image != SMEM_IMAGE_VERSION_PARTITION_APPS) {
@@ -803,7 +804,8 @@ msm_set_image_version(struct device *dev,
 	}
 	store_address += current_image * SMEM_IMAGE_VERSION_SINGLE_BLOCK_SIZE;
 	up_read(&current_image_rwsem);
-	snprintf(store_address, SMEM_IMAGE_VERSION_NAME_SIZE, "%-.75s", buf);
+	i = snprintf(store_address, SMEM_IMAGE_VERSION_NAME_SIZE, "%-.75s", buf);
+	WARN_ON(i >= SMEM_IMAGE_VERSION_NAME_SIZE);
 	return count;
 }
 
@@ -836,6 +838,7 @@ msm_set_image_variant(struct device *dev,
 			size_t count)
 {
 	char *store_address;
+	int i;
 
 	down_read(&current_image_rwsem);
 	if (current_image != SMEM_IMAGE_VERSION_PARTITION_APPS) {
@@ -852,7 +855,8 @@ msm_set_image_variant(struct device *dev,
 	store_address += current_image * SMEM_IMAGE_VERSION_SINGLE_BLOCK_SIZE;
 	up_read(&current_image_rwsem);
 	store_address += SMEM_IMAGE_VERSION_VARIANT_OFFSET;
-	snprintf(store_address, SMEM_IMAGE_VERSION_VARIANT_SIZE, "%-.20s", buf);
+	i = snprintf(store_address, SMEM_IMAGE_VERSION_VARIANT_SIZE, "%-.20s", buf);
+	WARN_ON(i >= SMEM_IMAGE_VERSION_VARIANT_SIZE);
 	return count;
 }
 
@@ -884,6 +888,7 @@ msm_set_image_crm_version(struct device *dev,
 			size_t count)
 {
 	char *store_address;
+	int i;
 
 	down_read(&current_image_rwsem);
 	if (current_image != SMEM_IMAGE_VERSION_PARTITION_APPS) {
@@ -900,7 +905,8 @@ msm_set_image_crm_version(struct device *dev,
 	store_address += current_image * SMEM_IMAGE_VERSION_SINGLE_BLOCK_SIZE;
 	up_read(&current_image_rwsem);
 	store_address += SMEM_IMAGE_VERSION_OEM_OFFSET;
-	snprintf(store_address, SMEM_IMAGE_VERSION_OEM_SIZE, "%-.32s", buf);
+	i = snprintf(store_address, SMEM_IMAGE_VERSION_OEM_SIZE, "%-.32s", buf);
+	WARN_ON(i >= SMEM_IMAGE_VERSION_OEM_SIZE);
 	return count;
 }
 
